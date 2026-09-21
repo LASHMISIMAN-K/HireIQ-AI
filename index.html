@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>HireIQ ✨</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     LOGIN PAGE
+===================================================== -->
+
+<section id="loginPage">
+
+    <nav>
+
+        <div class="logo">
+            HireIQ ✨
+        </div>
+
+        <span>
+            AI Resume Analyzer
+        </span>
+
+    </nav>
+
+
+    <main>
+
+        <section class="hero">
+
+            <h1>
+                Welcome Back.
+            </h1>
+
+            <p>
+                Login to continue using HireIQ
+                and analyze your resume with AI.
+            </p>
+
+        </section>
+
+
+        <section class="card">
+
+            <label>
+                Email
+            </label>
+
+            <input
+                type="email"
+                id="loginEmail"
+                placeholder="Enter your email"
+            >
+
+
+            <label>
+                Password
+            </label>
+
+            <input
+                type="password"
+                id="loginPassword"
+                placeholder="Enter your password"
+            >
+
+
+            <button onclick="loginUser()">
+
+                Login ✨
+
+            </button>
+
+
+            <p id="loginStatus"></p>
+
+
+            <p class="auth-switch">
+
+                Don't have an account?
+
+                <a onclick="showRegister()">
+                    Create Account
+                </a>
+
+            </p>
+
+        </section>
+
+    </main>
+
+</section>
+
+
+
+<!-- =====================================================
+     REGISTER PAGE
+===================================================== -->
+
+<section
+    id="registerPage"
+    class="hidden"
+>
+
+    <nav>
+
+        <div class="logo">
+            HireIQ ✨
+        </div>
+
+        <span>
+            AI Resume Analyzer
+        </span>
+
+    </nav>
+
+
+    <main>
+
+        <section class="hero">
+
+            <h1>
+                Create Your Account.
+            </h1>
+
+            <p>
+                Join HireIQ and improve your resume
+                with AI-powered insights.
+            </p>
+
+        </section>
+
+
+        <section class="card">
+
+            <label>
+                Full Name
+            </label>
+
+            <input
+                type="text"
+                id="registerName"
+                placeholder="Enter your name"
+            >
+
+
+            <label>
+                Email
+            </label>
+
+            <input
+                type="email"
+                id="registerEmail"
+                placeholder="Enter your email"
+            >
+
+
+            <label>
+                Password
+            </label>
+
+            <input
+                type="password"
+                id="registerPassword"
+                placeholder="Minimum 6 characters"
+            >
+
+
+            <button onclick="registerUser()">
+
+                Create Account ✨
+
+            </button>
+
+
+            <p id="registerStatus"></p>
+
+
+            <p class="auth-switch">
+
+                Already have an account?
+
+                <a onclick="showLogin()">
+                    Login
+                </a>
+
+            </p>
+
+        </section>
+
+    </main>
+
+</section>
+
+
+
+<!-- =====================================================
+     HIREIQ DASHBOARD
+===================================================== -->
+
+<section
+    id="dashboardPage"
+    class="hidden"
+>
+
+    <nav>
+
+        <div class="logo">
+            HireIQ ✨
+        </div>
+
+        <span>
+            AI Resume Analyzer
+        </span>
+
+        <button
+            onclick="logoutUser()"
+            class="logout-btn"
+        >
+            Logout
+        </button>
+
+    </nav>
+
+
+    <main>
+
+
+        <section class="hero">
+
+            <h1>
+                Glow up your resume.
+            </h1>
+
+            <p id="welcomeUser">
+                Get an AI-powered resume analysis
+                and discover what recruiters are looking for.
+            </p>
+
+        </section>
+
+
+
+        <!-- RESUME UPLOAD -->
+
+        <section class="card">
+
+            <label>
+                Target Job Role
+            </label>
+
+            <input
+                type="text"
+                id="jobRole"
+                placeholder="e.g. Frontend Developer"
+            >
+
+
+            <label>
+                Upload Resume
+            </label>
+
+            <input
+                type="file"
+                id="resume"
+                accept=".pdf"
+            >
+
+
+            <button
+                onclick="analyzeResume()"
+            >
+
+                Analyze My Resume ✨
+
+            </button>
+
+
+            <p id="status"></p>
+
+        </section>
+
+
+
+        <!-- RESULTS -->
+
+        <section
+            id="results"
+            class="results hidden"
+        >
+
+
+            <!-- ATS SCORE -->
+
+            <div class="score-card">
+
+                <h2>
+                    ATS Score
+                </h2>
+
+                <div id="score">
+                    0
+                </div>
+
+                <span>
+                    / 100
+                </span>
+
+            </div>
+
+
+
+            <!-- SUMMARY -->
+
+            <div class="result-card">
+
+                <h2>
+                    Summary
+                </h2>
+
+                <p id="summary"></p>
+
+            </div>
+
+
+
+            <!-- MATCHED SKILLS -->
+
+            <div class="result-card">
+
+                <h2>
+                    Matched Skills
+                </h2>
+
+                <div id="matchedSkills"></div>
+
+            </div>
+
+
+
+            <!-- MISSING SKILLS -->
+
+            <div class="result-card">
+
+                <h2>
+                    Missing Skills
+                </h2>
+
+                <div id="missingSkills"></div>
+
+            </div>
+
+
+
+            <!-- STRENGTHS -->
+
+            <div class="result-card">
+
+                <h2>
+                    Strengths
+                </h2>
+
+                <ul id="strengths"></ul>
+
+            </div>
+
+
+
+            <!-- WEAKNESSES -->
+
+            <div class="result-card">
+
+                <h2>
+                    Weaknesses
+                </h2>
+
+                <ul id="weaknesses"></ul>
+
+            </div>
+
+
+
+            <!-- SUGGESTIONS -->
+
+            <div class="result-card">
+
+                <h2>
+                    AI Suggestions ✨
+                </h2>
+
+                <ul id="suggestions"></ul>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+</section>
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>

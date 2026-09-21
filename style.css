@@ -1,0 +1,618 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            to right,
+            #141E30,
+            #35577D
+        );
+
+    color: white;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav {
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 8%;
+
+    background:
+        rgba(20, 30, 48, 0.65);
+
+    backdrop-filter: blur(15px);
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.12);
+}
+
+
+.logo {
+    font-size: 30px;
+
+    font-weight: bold;
+
+    letter-spacing: -1px;
+}
+
+
+nav span {
+    color: #cbd5e1;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+    width: 40%;
+
+    max-width: 900px;
+
+    margin: auto;
+}
+
+main > #content1{
+    width: 90%;
+}
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    text-align: center;
+
+    padding:
+        70px 20px 40px;
+}
+
+
+.hero h1 {
+    font-size: 48px;
+
+    margin-bottom: 15px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #b8c7ff
+        );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+.hero p {
+    font-size: 20px;
+
+    color: #cbd5e1;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   GLASS CARD
+========================= */
+
+.card {
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(25px);
+
+    -webkit-backdrop-filter: blur(25px);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.16);
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================
+   LABEL
+========================= */
+
+label {
+
+    display: block;
+
+    margin-top: 15px;
+
+    margin-bottom: 8px;
+
+    font-weight: bold;
+
+    color: #e2e8f0;
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+input {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.18);
+
+    border-radius: 10px;
+
+    margin-bottom: 10px;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    color: white;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition: 0.25s;
+}
+
+
+input::placeholder {
+    color: #a8b1c2;
+}
+
+
+input:focus {
+
+    border-color: #8b9cff;
+
+    background:
+        rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        0 0 0 3px rgba(139, 156, 255, 0.12);
+}
+
+
+/* =========================
+   FILE INPUT
+========================= */
+
+input[type="file"] {
+
+    cursor: pointer;
+
+    padding: 12px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+
+    width: 100%;
+
+    padding: 15px;
+
+    margin-top: 20px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #141E30,
+            #243b55
+        );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s,
+        opacity 0.2s,
+        box-shadow 0.2s;
+}
+
+
+button:hover {
+
+    opacity: 0.9;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+#status,
+#loginStatus,
+#registerStatus {
+
+    text-align: center;
+
+    margin-top: 15px;
+
+    color: #cbd5e1;
+
+    min-height: 20px;
+}
+
+
+/* =========================
+   AUTH SWITCH
+========================= */
+
+.auth-switch {
+
+    text-align: center;
+
+    margin-top: 22px;
+
+    color: #aeb8ca;
+
+    font-size: 14px;
+}
+
+
+.auth-switch a {
+
+    color: #aebdff;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+
+.auth-switch a:hover {
+
+    text-decoration: underline;
+}
+
+
+/* =========================
+   RESULTS
+========================= */
+
+.results {
+
+    margin: 40px 0;
+
+    display: grid;
+
+    gap: 20px;
+}
+
+
+/* =========================
+   HIDDEN
+========================= */
+
+.hidden {
+
+    display: none !important;
+}
+
+
+/* =========================
+   SCORE + RESULT CARDS
+========================= */
+
+.score-card,
+.result-card {
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(25px);
+
+    -webkit-backdrop-filter: blur(25px);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.16);
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.18);
+}
+
+
+.score-card {
+
+    text-align: center;
+
+    position: relative;
+}
+
+
+.score-card h2 {
+
+    color: #e2e8f0;
+
+    margin-bottom: 5px;
+}
+
+
+#score {
+
+    font-size: 65px;
+
+    font-weight: bold;
+
+    margin: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #aebdff
+        );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+.score-card span {
+
+    color: #aeb8ca;
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   RESULT HEADINGS
+========================= */
+
+.result-card h2 {
+
+    margin-bottom: 15px;
+
+    color: #ffffff;
+}
+
+
+.result-card p {
+
+    color: #cbd5e1;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   LISTS
+========================= */
+
+.result-card ul {
+
+    padding-left: 20px;
+}
+
+
+.result-card li {
+
+    margin: 10px 0;
+
+    color: #d4dbea;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+#matchedSkills,
+#missingSkills {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 5px;
+}
+
+
+.skill {
+
+    display: inline-block;
+
+    padding: 8px 13px;
+
+    margin: 4px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(15px);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.18);
+
+    color: #e2e8f0;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   DASHBOARD HEADER
+========================= */
+
+#dashboardPage nav {
+
+    gap: 20px;
+}
+
+
+/* =========================
+   LOGOUT BUTTON
+========================= */
+
+.logout-btn {
+
+    width: auto;
+
+    padding: 9px 18px;
+
+    margin-top: 0;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.18);
+
+    font-size: 14px;
+
+    font-weight: normal;
+}
+
+
+.logout-btn:hover {
+
+    background:
+        rgba(255, 255, 255, 0.15);
+
+    transform: none;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+    nav {
+
+        padding: 0 5%;
+
+    }
+
+
+    nav span {
+
+        display: none;
+
+    }
+
+
+    .hero {
+
+        padding-top: 50px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 38px;
+
+    }
+
+
+    .hero p {
+
+        font-size: 17px;
+
+    }
+
+
+    .card {
+
+        padding: 22px;
+
+    }
+
+
+    #score {
+
+        font-size: 55px;
+
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .logo {
+
+        font-size: 25px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 32px;
+
+    }
+
+
+    main {
+
+        width: 94%;
+
+    }
+
+}

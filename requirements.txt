@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+python-multipart
+pypdf
+python-dotenv
+google-genai
+PyJWT
+pwdlib[argon2]
+psycopg[binary]
